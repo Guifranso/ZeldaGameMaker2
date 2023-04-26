@@ -3,11 +3,12 @@
 scale = 3
 window_set_size(window_get_width() * scale, window_get_height() * scale)
 
-points = 0
+vx = 0
+vy = 0
+playerSpeed = 2
 
-verticalSpeed = 0
-horizontalSpeed = 0
-animationSpeed = 0.2
+attackSprite = link_attack_side
+walkSprite = link_walk_side
 
+timer = 0
 state = "IDLE"
-attacking = false
