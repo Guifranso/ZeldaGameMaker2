@@ -13,10 +13,10 @@
     {"name":"Shaders","order":6,"path":"folders/Shaders.yy",},
     {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
+    {"name":"Items","order":7,"path":"folders/Sprites/Items.yy",},
     {"name":"Player","order":6,"path":"folders/Sprites/Player.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Items","order":7,"path":"folders/Sprites/Items.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"link_walk_up","order":4,"path":"sprites/link_walk_up/link_walk_up.yy",},

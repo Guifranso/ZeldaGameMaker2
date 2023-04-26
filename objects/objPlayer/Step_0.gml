@@ -19,21 +19,26 @@ switch(state) {
 			if attackSprite == link_attack_side and image_xscale == 1 {
 				with(instance_create_layer(x-12, y, "Instances", objSword)) {
 					image_angle = 90
+					depth = 2
 				}
 			}
 			if attackSprite == link_attack_side and image_xscale == -1 {
 				with(instance_create_layer(x+12, y, "Instances", objSword)) {
 					image_angle = 270
+					depth = 2
 				}
 			}
 			if attackSprite == link_attack_up {
 				with(instance_create_layer(x, y-12, "Instances", objSword)) {
 					image_angle = 0
+					depth = 2
+					
 				}
 			}
 			if attackSprite == link_attack_down {
 				with(instance_create_layer(x, y+12, "Instances", objSword)) {
-					image_angle = 180	
+					image_angle = 180
+					depth = -1
 				}
 			}
 		}
