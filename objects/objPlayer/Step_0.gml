@@ -14,38 +14,30 @@ switch(state) {
         break
     }
     case "ATTACK_SWORD": {
-		show_debug_message("Atacou");
 		if timer == 16 {
 			if attackSprite == link_attack_side and image_xscale == 1 {
 				with(instance_create_layer(x-12, y, "Instances", objSword)) {
 					image_angle = 90
-					depth = 2
 				}
 			}
 			if attackSprite == link_attack_side and image_xscale == -1 {
 				with(instance_create_layer(x+12, y, "Instances", objSword)) {
 					image_angle = 270
-					depth = 2
 				}
 			}
 			if attackSprite == link_attack_up {
 				with(instance_create_layer(x, y-12, "Instances", objSword)) {
 					image_angle = 0
-					depth = 2
-					
 				}
 			}
 			if attackSprite == link_attack_down {
 				with(instance_create_layer(x, y+12, "Instances", objSword)) {
 					image_angle = 180
-					depth = -1
 				}
 			}
 		}
         if timer > 0 timer -= 1
-        else {
-			state = "IDLE"
-		}
+        else state = "IDLE"
         break
     }
     case "IDLE": {
@@ -104,5 +96,15 @@ switch(state) {
     }
 }
 
-x += vx;
-y += vy;
+repeat abs(vx) {
+	if !place_meeting(x + sign(vx), y, objSolid) {
+		x += sign(vx)
+	}
+}
+
+repeat abs(vy) {
+	if !place_meeting(x, y + sign(vy), objSolid) {
+		y += sign(vy)
+	}
+}
+ 
