@@ -55,7 +55,7 @@ switch(state) {
 		sprite_index = walkSprite
         image_xscale = 1
         vx = 0
-        vy = -1 * playerSpeed
+        vy = -1 * moveSpeed
         
         checkInputs()
         break
@@ -67,7 +67,7 @@ switch(state) {
 		sprite_index = walkSprite
         image_xscale = 1
         vx = 0
-        vy = playerSpeed
+        vy = moveSpeed
         
         checkInputs()
         break
@@ -78,7 +78,7 @@ switch(state) {
 		attackSprite = link_attack_side
 		sprite_index = walkSprite
         image_xscale = 1
-        vx = -1 * playerSpeed
+        vx = -1 * moveSpeed
         vy = 0
         checkInputs()
         break
@@ -89,22 +89,11 @@ switch(state) {
 		attackSprite = link_attack_side
 		sprite_index = walkSprite
         image_xscale = -1
-        vx = playerSpeed
+        vx = moveSpeed
         vy = 0
         checkInputs()
         break
     }
 }
 
-repeat abs(vx) {
-	if !place_meeting(x + sign(vx), y, objSolid) {
-		x += sign(vx)
-	}
-}
-
-repeat abs(vy) {
-	if !place_meeting(x, y + sign(vy), objSolid) {
-		y += sign(vy)
-	}
-}
- 
+checkCollisionObj(vx, vy, objSolid)
